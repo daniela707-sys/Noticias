@@ -27,6 +27,15 @@ header{
 .principalContainer{
     padding:20px 100px 100px 100px
 }
+@media (max-width: 767.98px) {
+    section.sticky-top {
+        position: static !important;
+    }
+.principalContainer{
+    padding:20px 20px 20px 20px
+}
+    
+}
 
 /* Importar componentes */
 @import url('components/header.css');

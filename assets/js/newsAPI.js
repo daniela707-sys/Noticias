@@ -160,7 +160,7 @@ const NewsAPI = (function() {
             const newsCard = document.createElement('div');
             newsCard.className = 'col';
             newsCard.innerHTML = `
-                <div class="card news-card h-100 upsitve-card">
+                <div class="card news-card h-100 w-2000 upsitve-card">
                     <div class="card-header upsitve-header">
                         ${item.category}
                     </div>

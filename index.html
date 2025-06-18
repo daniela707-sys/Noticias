@@ -26,17 +26,18 @@
         </div>
     </header>
 
-    <article class="principalContainer d-flex flex-nowrap">
+    <article class="principalContainer d-flex flex-column flex-lg-row gap-4">
+
         <!-- Filtros -->
-        <section class=" py-3 sticky-top">
+        <section class="w-50 w-lg-1  py-3 sticky-top">
             <h1>Filtros</h1>
             <div class="filtercontainer">
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     <!-- Buscador -->
-                    <input type="text" class="form-control flex-grow-1" style="min-width: 200px;" id="searchInput" placeholder="Buscar por título...">
+                    <input type="text" class="form-control flex-grow-1" style="min-width: 300px;" id="searchInput" placeholder="Buscar por título...">
                     
                     <!-- Selector de categoría -->
-                    <select class="form-select flex-grow-1" style="min-width: 180px;" id="categoryFilter">
+                    <select class="form-select flex-grow-1" style="min-width: 300px;" id="categoryFilter">
                         <option value="">Todas las categorías</option>
                         <option value="Emprendimiento">Emprendimiento</option>
                         <option value="Formación">Formación</option>
@@ -45,10 +46,10 @@
                     </select>
                     
                     <!-- Filtro por fecha -->
-                    <input type="date" class="form-control flex-grow-1" style="min-width: 160px;" id="dateFilter">
+                    <input type="date" class="form-control flex-grow-1" style="min-width: 300px;" id="dateFilter">
                     
                     <!-- Filtro por autor -->
-                    <select class="form-select flex-grow-1" style="min-width: 200px;" id="authorFilter">
+                    <select class="form-select flex-grow-1" style="min-width: 300px;" id="authorFilter">
                         <option value="">Todos los autores</option>
                         <option value="Dirección General">Dirección General</option>
                         <option value="Comunicaciones">Comunicaciones</option>
@@ -56,7 +57,7 @@
                     </select>
                     
                     <!-- Botón reset -->
-                    <button class="btn btn-outline-success flex-grow-1" style="min-width: 120px;" id="resetFilters">Limpiar filtros</button>
+                    <button class="btn btn-outline-success flex-grow-1" style="min-width: 300px;" id="resetFilters">Limpiar filtros</button>
 
                     
                 </div>
@@ -64,7 +65,7 @@
         </section>
 
         <!-- Contenido principal -->
-        <main class="container py-4">
+        <main class="w-100 w-lg-100  container py-4">
             <div class="d-flex justify-content-between">
                 <div class="mb-3 text-muted">
                     Mostrando <span id="newsCount">0</span> noticias
