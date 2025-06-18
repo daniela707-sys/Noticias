@@ -1,0 +1,34 @@
+/* Variables */
+:root {
+    --sena-primary: #0056A3;
+    --sena-secondary: #E5E5E5;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+}
+
+/* Estilos base */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+header{
+    background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg');
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+}
+.principalContainer{
+    padding:20px 100px 100px 100px
+}
+
+/* Importar componentes */
+@import url('components/header.css');
+@import url('components/filters.css');
+@import url('components/cards.css');

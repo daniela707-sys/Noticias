@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Red Emprender SENA</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components/filter.css">
+    <link rel="stylesheet" href="assets/css/components/cards.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="text-white py-4 d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <h1 class="mb-0"><i class="bi bi-newspaper"></i> Noticias</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="principalContainer d-flex flex-nowrap">
+        <!-- Filtros -->
+        <section class=" py-3 sticky-top">
+            <h1>Filtros</h1>
+            <div class="filtercontainer">
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                    <!-- Buscador -->
+                    <input type="text" class="form-control flex-grow-1" style="min-width: 200px;" id="searchInput" placeholder="Buscar por título...">
+                    
+                    <!-- Selector de categoría -->
+                    <select class="form-select flex-grow-1" style="min-width: 180px;" id="categoryFilter">
+                        <option value="">Todas las categorías</option>
+                        <option value="Emprendimiento">Emprendimiento</option>
+                        <option value="Formación">Formación</option>
+                        <option value="Eventos">Eventos</option>
+                        <option value="Convocatorias">Convocatorias</option>
+                    </select>
+                    
+                    <!-- Filtro por fecha -->
+                    <input type="date" class="form-control flex-grow-1" style="min-width: 160px;" id="dateFilter">
+                    
+                    <!-- Filtro por autor -->
+                    <select class="form-select flex-grow-1" style="min-width: 200px;" id="authorFilter">
+                        <option value="">Todos los autores</option>
+                        <option value="Dirección General">Dirección General</option>
+                        <option value="Comunicaciones">Comunicaciones</option>
+                        <option value="Centro de Emprendimiento">Centro de Emprendimiento</option>
+                    </select>
+                    
+                    <!-- Botón reset -->
+                    <button class="btn btn-outline-success flex-grow-1" style="min-width: 120px;" id="resetFilters">Limpiar filtros</button>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido principal -->
+        <main class="container py-4">
+            <div class="d-flex justify-content-between">
+                <div class="mb-3 text-muted">
+                    Mostrando <span id="newsCount">0</span> noticias
+                </div>
+                <button class="btn btn-light " id="createNewsBtn">
+                    <i class="bi bi-plus-circle"></i> Crear Noticia
+                </button>
+            </div>
+            
+            <!-- Grid de noticias -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="newsContainer">
+                <!-- Las tarjetas se insertarán aquí dinámicamente con JavaScript -->
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Siguiente</a>
+                        </li>
+                    </ul>
+            </nav>
+        </main>
+        
+
+    </article>
+    
+    <!-- Modal para detalles de noticia -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Título de la noticia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- El contenido se cargará dinámicamente -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/newsAPI.js"></script>
+    <script src="assets/js/pagination.js"></script>
+    <script src="assets/js/filters.js"></script>
+
+</body>
+</html>
