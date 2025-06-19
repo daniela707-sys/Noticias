@@ -4,10 +4,10 @@ const NewsAPI = (function() {
     const newsData = [
         {
             id: 1,
-            title: "Nuevo programa de formación en emprendimiento digital",
+            title: "Programa de formación en emprendimiento digital",
             summary: "El SENA lanza un nuevo programa para formar emprendedores en el ámbito digital con énfasis en marketing y comercio electrónico.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-05-15",
+            date: "2025-01-01",
             author: "Centro de Emprendimiento",
             category: "Formación",
             content: "Contenido completo de la noticia aquí..."
@@ -17,7 +17,7 @@ const NewsAPI = (function() {
             title: "Convocatoria para participar en feria de emprendimiento",
             summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
+            date: "2025-06-02",
             author: "Dirección General",
             category: "Convocatorias",
             content: "Contenido completo de la noticia aquí..."
@@ -27,7 +27,7 @@ const NewsAPI = (function() {
             title: "Evento de networking para emprendedores",
             summary: "Se realiza un evento de networking para emprendedores SENA con empresas y profesionales del sector.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-07-10",
+            date: "2025-07-10",
             author: "Comunidad Emprendedora",
             category: "Eventos",
             content: "Contenido completo de la noticia aquí..."
@@ -37,7 +37,7 @@ const NewsAPI = (function() {
             title: "Taller de desarrollo de software para emprendedores",
             summary: "El SENA lanza un taller de desarrollo de software para emprendedores con énfasis en desarrollo web y móvil.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-08-20",
+            date: "2025-08-20",
             author: "Centro de Emprendimiento",
             category: "Emprendimiento",
             content: "Contenido completo de la noticia aquí..."
@@ -47,7 +47,7 @@ const NewsAPI = (function() {
             title: "Nuevo programa de formación en emprendimiento digital",
             summary: "El SENA lanza un nuevo programa para formar emprendedores en el ámbito digital con énfasis en marketing y comercio electrónico.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-05-15",
+            date: "2025-05-15",
             author: "Centro de Emprendimiento",
             category: "Formación",
             content: "Contenido completo de la noticia aquí..."
@@ -57,7 +57,7 @@ const NewsAPI = (function() {
             title: "Convocatoria para participar en feria de emprendimiento",
             summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
+            date: "2025-06-02",
             author: "Dirección General",
             category: "Convocatorias",
             content: "Contenido completo de la noticia aquí..."
@@ -67,7 +67,7 @@ const NewsAPI = (function() {
             title: "Convocatoria para participar en feria de emprendimiento",
             summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
+            date: "2025-06-02",
             author: "Dirección General",
             category: "Convocatorias",
             content: "Contenido completo de la noticia aquí..."
@@ -77,7 +77,7 @@ const NewsAPI = (function() {
             title: "Convocatoria para participar en feria de emprendimiento",
             summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
+            date: "2025-06-02",
             author: "Dirección General",
             category: "Convocatorias",
             content: "Contenido completo de la noticia aquí..."
@@ -87,17 +87,7 @@ const NewsAPI = (function() {
             title: "Convocatoria para participar en feria de emprendimiento",
             summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
             image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
-            author: "Dirección General",
-            category: "Convocatorias",
-            content: "Contenido completo de la noticia aquí..."
-        },
-         {
-            id: 10,
-            title: "Convocatoria para participar en feria de emprendimiento",
-            summary: "Abierta convocatoria para emprendedores SENA que deseen participar en la feria nacional de emprendimiento.",
-            image: "https://inkscape.app/wp-content/uploads/imagen-vectorial.webp",
-            date: "2023-06-02",
+            date: "2025-06-02",
             author: "Dirección General",
             category: "Convocatorias",
             content: "Contenido completo de la noticia aquí..."
@@ -109,9 +99,12 @@ const NewsAPI = (function() {
 
     // Formatear fecha
     function formatDate(dateString) {
+        const [year, month, day] = dateString.split('-');
+        const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString('es-ES', options);
+        return date.toLocaleDateString('es-ES', options);
     }
+
 
     // Mostrar detalle de noticia en modal
     function showNewsDetail(newsItem) {
@@ -133,6 +126,7 @@ const NewsAPI = (function() {
                     <small class="text-muted ms-2">Publicado por: ${newsItem.author}</small>
                 </div>
             </div>
+            <p>${newsItem.summary}</p>
             <p>${newsItem.content}</p>
         `;
         
